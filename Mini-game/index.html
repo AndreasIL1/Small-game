@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village simulator 2022</title>
+    <link rel="stylesheet" href="css-skal-ikke-roeres/index.css">
+</head>
+<body>
+
+    <div id="container">     
+        
+        <div id="info-div">
+            <div id="life-bar-box">
+                <p id="life-bar">300hp</p><!-- Dette er selve livet (grønne baren). -->
+            </div>
+
+            <!-- Denne p-tagen inneholder informasjon om hvor mye tre og metall man har. -->
+            <p id="material-info">Wood: 0 units. Metal: 0 enheter. Number of Buldings: 0. Strength: 10</p>
+        </div>
+
+
+        <!-- Knappemenyen -->
+        <div id="button-menu">
+            <button id="buy-building-1-btn"onclick="Building()"><img src="images/building-1.png"><p>Buy (50 wood, 10 metal)</p></button> 
+            <button id="buy-building-2-btn"onclick="Building2()"><img src="images/building-3.png"><p>Buy (150 wood, 30 metal)</p></button>            
+            <button id="buy-sword-btn" onclick="Sword()"><img id="sword" src="images/sword.png"><p>Buy sword (200 metal)</p></button>
+        <!-- her lager jeg to knapper som linkes til js som velger hvilke karakter du vil velge. -->
+            <button id="Man" onclick="onChangeWarrior(this)"><img src="images/warrior.png"><p>Choose man</p></button>
+            <button id="Woman" onclick="onChangeWarrior(this)"><img src="images/warrior2.png"><p>Choose woman</p></button>
+        </div>        
+
+        <img id="warrior-1" src="images/warrior.png">
+
+        <!-- Her legger man til bilder av bygninger. -->
+        <div id="building-div"></div>    
+
+
+        <!-- Her har jeg ligget til tre monstre som er skjult som blir hentet av js. det blir hentet mellom 5-15 klikk å antallet varier fra 1-3.). -->
+        <div id="monster-div">
+            <img id="monster0" src="images/cute-wolfman.png" style="cursor: pointer; visibility: hidden;" onclick="monsterAttacked(this)">
+            <img id="monster1" src="images/cute-wolfman.png" style="cursor: pointer; visibility: hidden;" onclick="monsterAttacked(this)">
+            <img id="monster2" src="images/cute-wolfman.png" style="cursor: pointer; visibility: hidden;" onclick="monsterAttacked(this)">
+        </div>
+
+
+        <!-- Kull minen koblet til javascript -->
+        <img id="metal-mine" onclick="onMining()" src="images/coal-mine.png">
+
+
+        <!-- Her er trærene i spillet å har linket de med javascript -->                
+        <img id="tree-3" onclick="onTreeCutting(this)" src="images/tree.png" alt="">
+        <img id="tree-2" onclick="onTreeCutting(this)" src="images/tree.png" alt="">
+        <img id="tree-1" onclick="onTreeCutting(this)" src="images/tree.png" alt="">
+
+    </div><!-- End container-->
+
+
+    <!-- Her skrives det ut informasjon om hva brukeren gjør og hva som skjer. -->
+    <div id="output-div">
+        <p></p>
+    </div>
+
+    <!--Her kobler jeg html dokumentet mitt til javascript dokumentet-->
+    <script src="index.js"></script>
+
+</body>
+</html>
